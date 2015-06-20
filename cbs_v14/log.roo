@@ -1,0 +1,21 @@
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-06-20 13:59:39
+project --topLevelPackage com.epam.hack.choosebyspeed
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+entity jpa --class ~.domain.Category
+field string --fieldName name --notNull --sizeMax 30
+field reference --fieldName parent --type ~.domain.Category
+entity jpa --class ~.domain.Product
+field string --fieldName name --notNull --sizeMax 30
+field reference --fieldName category --type ~.domain.Category
+entity jpa --class ~.domain.Provider
+field string --fieldName name --notNull --sizeMax 30
+field reference --fieldName category --type ~.domain.Category
+field number --fieldName locationLat --type java.lang.Float
+field number --fieldName locationLong --type java.lang.Float
+field string --fieldName imageUrl --notNull --sizeMax 300
+field file --fieldName image --contentType JPG
+field string --fieldName description --notNull --sizeMax 500
+field string --fieldName phoneNumber --notNull --sizeMax 500
+field string --fieldName menuHtml --notNull --sizeMax 500
+// [failed] finder add --finderName findProvidersByCategory --class ~.domain.Provider
+// [failed] script cbs_v14.roo
